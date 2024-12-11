@@ -80,12 +80,7 @@ WSGI_APPLICATION = 'django_freelance.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'freelance',
-#     }
-# }
+
 
 DATABASES = {
     'default': {
@@ -93,7 +88,7 @@ DATABASES = {
         'NAME': 'freelance',
         'USER': 'postgres',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
