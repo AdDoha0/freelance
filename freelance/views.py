@@ -72,8 +72,29 @@ class ServiceCreateView(generics.CreateAPIView):
 
 
 class ServiceListView(generics.ListAPIView):
-    queryset = Service.objects.all()
+    # queryset = Service.objects.all()
     serializer_class = ServiceSerializer
+
+    def get_queryset(self):
+        queryset = Service.objects.all()
+
+        params = self.request.query_params
+
+        service_type = params.get('service', None)
+        price = params.get('price', None)
+        executor = params.get('executor', None)
+
+        if service_type:
+            queryset = queryset.filter(service_type=service_type)
+
+        if price:
+            queryset = queryset.filter(price__lte=price)
+
+        if executor:
+            queryset = queryset.filter(executor__id=executor)
+
+        return queryset
+
 
 
 # ---------------------Order------------------------
@@ -95,8 +116,29 @@ class OrderCreateView(generics.CreateAPIView):
 
 
 class OrderListView(generics.ListAPIView):
-    queryset = Order.objects.all()
+
     serializer_class = OrderSerializer
+
+
+    def get_queryset(self):
+        queryset = Service.objects.all()
+
+        params = self.request.query_params
+
+        service_type = params.get('service', None)
+        price = params.get('price', None)
+        customer = params.get('customer', None)
+
+        if service_type:
+            queryset = queryset.filter(service_type=service_type)
+
+        if price:
+            queryset = queryset.filter(price__lte=price)
+
+        if customer:
+            queryset = queryset.filter(customer__id=customer)
+
+        return queryset
 
 
 
@@ -168,8 +210,34 @@ class MessageCreateView(generics.CreateAPIView):
 
 
 class MessageListView(generics.ListAPIView):
-    queryset = Message.objects.all()
     serializer_class = MessageSerializer
+
+    def get_queryset(self):
+        queryset = Message.objects.all()
+        params = self.request.query_params
+
+        customer = params.get('customer', None)
+        executor = params.get('executor', None)
+        from_date = params.get('to_date', None)
+        to_date = params.get('to_date', None)
+
+
+        if executor:
+            queryset = queryset.filter(executor_id=executor)
+
+        if customer:
+            queryset = queryset.filter(customer_id=customer)
+
+        if from_date:
+            queryset = queryset.filter(msg_date__gte=from_date)
+
+        if to_date:
+            queryset = queryset.filter(msg_date__lte=to_date)
+
+        return queryset
+
+
+
 
 
 # ----------------Ticket------------------------
