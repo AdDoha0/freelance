@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freelance',
     'rest_framework',
+    # 'rest_framework.authtoken',
     'djoser',
     'corsheaders'
 ]
@@ -125,6 +126,19 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+         'rest_framework.permissions.IsAuthenticated',
+   ],
+    "DEFAULT_PARSER_CLASSES": [
+         "rest_framework.parsers.JSONParser",
+   ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ),
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -143,3 +157,32 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Стандартный бэкенд аутентификации
+]
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'freelance': {  # Замените на имя вашего приложения
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
+
