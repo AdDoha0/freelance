@@ -1,7 +1,7 @@
 import flet as ft
 
-from components.nav_bar import create_navbar
-
+from components.navbar import create_navbar
+from screens.home_screen import HomePage
 
 def main(page: ft.Page):
     # настройки страницы
@@ -10,27 +10,21 @@ def main(page: ft.Page):
     page.theme_mode = "dark"
     page.bgcolor = "#1E1E2F"
     page.padding = 0
+    page.title = "Фриланс Приложение"
+
+
+    # Создаем экземпляры страниц
+    home_page = HomePage(page)
+
+    # Добавляем страницы в приложение
+    page.add(home_page.build())
+
+
+if __name__ == "__main__":
+    ft.app(target=main)
 
 
 
 
-    block = ft.Container(
-        content=ft.Text("Привет, мир!", color="#FFFFFF"),
-        bgcolor='#2A2A2F',
-        width=500,
-        height=100,
-        padding=10,
 
-        )
-
-    navbar = create_navbar()
-
-    page.add(block)
-
-    page.add(navbar)
-
-
-
-# Запускаем приложение
-ft.app(target=main)
 

@@ -20,5 +20,33 @@ def create_navbar() -> ft.Row:
         padding=ft.padding.only(top=7, bottom=7),  # Установка отступов только сверху и снизу
         margin=ft.margin.only(left=0, right=0),  # Установка отступов для контейнера
     )
+
+# def create_search_box():
+
+#     # Поисковая строка
+#     search_box = ft.TextField(label="Поиск проектов", width=400)
+#     search_button = ft.ElevatedButton("Поиск", on_click=lambda e: search_projects(search_box.value))
+
+#     # results_container = ft.Column()
+
+#     def search_projects(query):
+#         # Логика поиска проектов
+#         print(f"Поиск проектов по запросу: {query}")
+
+#         # Очистка предыдущих результатов
+#         # results_container.controls.clear()
+
+#     return ft.Container(
+#         content=(
+#             ft.Column(
+#                 search_box,
+#                 search_button
+#                 )
+#             )
+#         )
+
+
+
+
 #vkvfkmmv
 # bgcolor=ft.colors.TRANSPARENT, color=ft.colors.LIGHT_GREEN
