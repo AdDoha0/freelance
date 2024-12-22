@@ -27,11 +27,22 @@ def main(page: ft.Page):
     home_page = HomePage(page)
     cat_or_page = CatOrSearcPage(page)
 
+
+    # Функция для переключения страниц
+    def switch_page(page_name):
+        page.clean()  # Очищаем текущую страницу
+
+        if page_name == "home":
+            page.add(home_page.build())  # Добавляем главную страницу
+        elif page_name == "cat_or_search":
+            page.add(cat_or_page.build())  # Добавляем вторую страницу
+
+        page.add(create_navbar(switch_page))
+
+
     # Добавляем страницы в приложение
-
-
-    page.add(home_page.build())
-    page.add(create_navbar())
+    switch_page("home")
+    # page.add(create_navbar())
 
 
 if __name__ == "__main__":

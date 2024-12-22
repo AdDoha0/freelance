@@ -5,12 +5,12 @@ import flet as ft
 
 
 
-def create_navbar() -> ft.Row:
+def create_navbar(switch_page) -> ft.Row:
     # Создание навигационного бара внизу экрана
     navbar = ft.Row(
         controls=[
-            ft.IconButton(ft.icons.HOME, tooltip="Главная", icon_color="#B2FF66"),
-            ft.IconButton(ft.icons.SEARCH_SHARP, tooltip="Избранное", icon_color="#B2FF66"),
+            ft.IconButton(ft.icons.HOME, tooltip="Главная", icon_color="#B2FF66", on_click=lambda e: switch_page("home")),
+            ft.IconButton(ft.icons.SEARCH_SHARP, tooltip="Избранное", icon_color="#B2FF66", on_click=lambda e: switch_page("cat_or_search")),
             ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
             ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
         ],
