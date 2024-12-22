@@ -10,7 +10,7 @@ def create_navbar() -> ft.Row:
     navbar = ft.Row(
         controls=[
             ft.IconButton(ft.icons.HOME, tooltip="Главная", icon_color="#B2FF66"),
-            ft.IconButton(ft.icons.STAR, tooltip="Избранное", icon_color="#B2FF66"),
+            ft.IconButton(ft.icons.SEARCH_SHARP, tooltip="Избранное", icon_color="#B2FF66"),
             ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
             ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
         ],
@@ -23,7 +23,7 @@ def create_navbar() -> ft.Row:
     return ft.Container(
         content=navbar,
         bgcolor="#1A1A2E",
-        padding=ft.padding.only(top=15, bottom=15),  # Установка отступов только сверху и снизу
+        padding=ft.padding.only(top=20, bottom=15),  # Установка отступов только сверху и снизу
         margin=ft.margin.only(left=-12, right=-12, top=-12, bottom=-12) # Установка отступов для контейнера
     )
 
@@ -71,6 +71,48 @@ def create_cat_scroll_horizontal() -> ft.Row:
         )
 
         return categories
+
+
+
+class OrderCard():
+    """Создание карточек заказов"""
+
+    def __init__(self, name, type, price, description):
+        self.order_name = name
+        self.order_type = type
+        self.order_price = price
+        self.order_description = description
+        self.card = self.create_order_card()
+
+
+    def create_order_card(self):
+        freelance_order_card = ft.Card(
+        content=ft.Container(
+            content=ft.Column(
+                [
+                    ft.Text("Заказ", size=24, weight=ft.FontWeight.BOLD, color=ft.colors.WHITE),
+                    ft.Divider(color="#B2FF66"),  # Разделитель
+                    ft.Text(f"{self.order_name}", size=18, weight=ft.FontWeight.NORMAL, color=ft.colors.WHITE),
+                    ft.Text(f"Тип: {self.order_type}", size=16, weight=ft.FontWeight.NORMAL, color=ft.colors.WHITE),
+                    ft.Text(f"Цена: ${self.order_price}", size=18, weight=ft.FontWeight.BOLD, color=ft.colors.YELLOW_400),
+                    ft.Text(f"Описание: {self.order_description}",
+                            size=14, weight=ft.FontWeight.NORMAL, color=ft.colors.WHITE),
+                    ft.Divider(color="#B2FF66"),  # Разделитель
+                    ft.ElevatedButton(
+                        "Подробнее",
+                        color=ft.colors.WHITE,
+                        style=ft.ButtonStyle(padding=ft.padding.only(top=10, bottom=10))  # Паддинг для кнопки
+                    )
+                ],
+                spacing=10,  # Расстояние между элементами
+                horizontal_alignment=ft.MainAxisAlignment.START  # Выравнивание по левому краю
+            ),
+            padding=20,
+            bgcolor='#1A1A2E',  # Цвет фона карточки
+        ),
+        elevation=4,  # Эффект тени
+        )
+        return freelance_order_card
 
 
 
