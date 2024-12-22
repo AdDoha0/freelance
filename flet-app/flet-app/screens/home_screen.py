@@ -24,7 +24,7 @@ class HomePage:
 
 
 
-        main_content = ft.Column(
+        layout = ft.Column(
             controls=[
                 ft.Container(
                     content=popular_title,
@@ -43,13 +43,6 @@ class HomePage:
             spacing=10,
             expand=True
             )
-
-        layout = ft.Column(
-            controls=[
-                main_content,
-            ],
-            expand=True  # Занимает доступное пространство
-        )
 
         # Возвращаем главный контейнер с элементами
         return layout

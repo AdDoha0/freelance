@@ -116,29 +116,43 @@ class OrderCard():
 
 
 
-# def create_search_box():
 
-#     # Поисковая строка
-#     search_box = ft.TextField(label="Поиск проектов", width=400)
-#     search_button = ft.ElevatedButton("Поиск", on_click=lambda e: search_projects(search_box.value))
-
-#     # results_container = ft.Column()
-
-#     def search_projects(query):
-#         # Логика поиска проектов
-#         print(f"Поиск проектов по запросу: {query}")
-
-#         # Очистка предыдущих результатов
-#         # results_container.controls.clear()
-
-#     return ft.Container(
-#         content=(
-#             ft.Column(
-#                 search_box,
-#                 search_button
-#                 )
-#             )
-#         )
+def create_search_form():
+    search_form = ft.Container(
+        content=ft.Column(
+            [
+                ft.Text("Поиск заказов", size=24, weight=ft.FontWeight.BOLD, color=ft.colors.WHITE),
+                ft.Row(
+                    [
+                        ft.TextField(
+                            label="Введите название заказа",
+                            bgcolor='#1A1A2E',  # Цвет фона текстового поля
+                            color=ft.colors.WHITE,
+                            border_color="#B2FF66",  # Цвет границы текстового поля
+                            cursor_color=ft.colors.WHITE,
+                            expand=True  # Позволяет текстовому полю занимать доступное пространство
+                        ),
+                    ],
+                    alignment=ft.MainAxisAlignment.START,  # Выравнивание по левому краю
+                    spacing=10  # Расстояние между элементами
+                ),
+                ft.Row(
+                    [
+                        ft.ElevatedButton(
+                            "Найти",
+                            color=ft.colors.WHITE,
+                            style=ft.ButtonStyle(padding=ft.padding.only(left=10, right=10))  # Паддинг для кнопки
+                        )
+                    ],
+                    alignment=ft.MainAxisAlignment.START,  # Выравнивание по левому краю
+                    spacing=10  # Расстояние между элементами
+                )
+            ],
+            spacing=10,  # Расстояние между элементами
+        ),
+        bgcolor='#1E1E2F',  # Цвет фона контейнера формы поиска
+    )
+    return search_form
 
 
 
