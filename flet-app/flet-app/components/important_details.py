@@ -14,6 +14,8 @@ def create_navbar(switch_page) -> ft.Row:
             # ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
             # ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
             ft.IconButton(ft.icons.WARNING, tooltip="test log", icon_color="#B2FF66", on_click=lambda e: switch_page("login")),
+            ft.IconButton(ft.icons.WARNING, tooltip="test log", icon_color="#B2FF66", on_click=lambda e: switch_page("authorization")),
+
         ],
         alignment=ft.MainAxisAlignment.SPACE_AROUND,
         vertical_alignment=ft.CrossAxisAlignment.CENTER,
@@ -117,7 +119,6 @@ class OrderCard():
 
 
 
-
 def create_search_form():
     search_form = ft.Container(
         content=ft.Column(
@@ -127,7 +128,7 @@ def create_search_form():
                     [
                         ft.TextField(
                             label="Введите название заказа",
-                            bgcolor='#1A1A2E',  # Цвет фона текстового поля
+                            # bgcolor='#1A1A2E',  # Цвет фона текстового поля
                             color=ft.colors.WHITE,
                             border_color="#B2FF66",  # Цвет границы текстового поля
                             cursor_color=ft.colors.WHITE,
@@ -141,7 +142,8 @@ def create_search_form():
                     [
                         ft.ElevatedButton(
                             "Найти",
-                            color=ft.colors.WHITE,
+                            color="#1E1E2F",
+                            bgcolor="#B2FF66",
                             style=ft.ButtonStyle(padding=ft.padding.only(left=10, right=10))  # Паддинг для кнопки
                         )
                     ],
