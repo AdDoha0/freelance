@@ -3,6 +3,7 @@ import flet as ft
 from components.important_details import create_navbar
 from screens.home_screen import HomePage
 from screens.cat_or_search_screen import CatOrSearcPage
+from screens.login_screen import LoginPage
 
 def main(page: ft.Page):
     # настройки страницы
@@ -26,6 +27,7 @@ def main(page: ft.Page):
     # Создаем экземпляры страниц
     home_page = HomePage(page)
     cat_or_search_page = CatOrSearcPage(page)
+    login_page = LoginPage(page)
 
 
     # Функция для переключения страниц
@@ -36,6 +38,8 @@ def main(page: ft.Page):
             page.add(home_page.build())  # Добавляем главную страницу
         elif page_name == "cat_or_search":
             page.add(cat_or_search_page.build())  # Добавляем вторую страницу
+        elif page_name == "login":
+            page.add(login_page.build())
 
         page.add(create_navbar(switch_page))
 

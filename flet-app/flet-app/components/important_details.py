@@ -11,8 +11,9 @@ def create_navbar(switch_page) -> ft.Row:
         controls=[
             ft.IconButton(ft.icons.HOME, tooltip="Главная", icon_color="#B2FF66", on_click=lambda e: switch_page("home")),
             ft.IconButton(ft.icons.SEARCH_SHARP, tooltip="Избранное", icon_color="#B2FF66", on_click=lambda e: switch_page("cat_or_search")),
-            ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
-            ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
+            # ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
+            # ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
+            ft.IconButton(ft.icons.WARNING, tooltip="test log", icon_color="#B2FF66", on_click=lambda e: switch_page("login")),
         ],
         alignment=ft.MainAxisAlignment.SPACE_AROUND,
         vertical_alignment=ft.CrossAxisAlignment.CENTER,
