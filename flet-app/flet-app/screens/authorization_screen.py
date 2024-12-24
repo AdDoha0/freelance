@@ -53,9 +53,6 @@ class AuthorizationPage:
 
 
 
-
-
-
         layout = ft.Column(
             controls=[
                 ft.Container(

@@ -5,6 +5,7 @@ from screens.home_screen import HomePage
 from screens.cat_or_search_screen import CatOrSearcPage
 from screens.login_screen import LoginPage
 from screens.authorization_screen import AuthorizationPage
+from screens.profile_screen import ProfilePage
 
 def main(page: ft.Page):
     # настройки страницы
@@ -30,6 +31,7 @@ def main(page: ft.Page):
     cat_or_search_page = CatOrSearcPage(page)
     login_page = LoginPage(page)
     authorization_page = AuthorizationPage(page)
+    profile_page = ProfilePage(page)
 
 
 
@@ -45,6 +47,8 @@ def main(page: ft.Page):
             page.add(login_page.build())
         elif page_name == "authorization":
             page.add(authorization_page.build())
+        elif page_name == "profile":
+            page.add(profile_page.build())
 
         page.add(create_navbar(switch_page))
 

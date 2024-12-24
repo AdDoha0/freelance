@@ -12,7 +12,7 @@ def create_navbar(switch_page) -> ft.Row:
             ft.IconButton(ft.icons.HOME, tooltip="Главная", icon_color="#B2FF66", on_click=lambda e: switch_page("home")),
             ft.IconButton(ft.icons.SEARCH_SHARP, tooltip="Избранное", icon_color="#B2FF66", on_click=lambda e: switch_page("cat_or_search")),
             # ft.IconButton(ft.icons.INFO, tooltip="О нас", icon_color="#B2FF66"),
-            # ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66"),
+            ft.IconButton(ft.icons.CONTACT_MAIL, tooltip="Контакты", icon_color="#B2FF66", on_click=lambda e: switch_page("profile") ),
             ft.IconButton(ft.icons.WARNING, tooltip="test log", icon_color="#B2FF66", on_click=lambda e: switch_page("login")),
             ft.IconButton(ft.icons.WARNING, tooltip="test log", icon_color="#B2FF66", on_click=lambda e: switch_page("authorization")),
 
@@ -116,6 +116,36 @@ class OrderCard():
         elevation=4,  # Эффект тени
         )
         return freelance_order_card
+
+
+
+
+class OrderCardInProfile:
+    def __init__(self, order_name, order_type, order_price):
+        self.order_name = order_name
+        self.order_type = order_type
+        self.order_price = order_price
+
+    def create_order_card(self):
+        return ft.Card(
+            content=ft.Container(
+                content=ft.Column(
+                    [
+                        ft.Text(self.order_name, size=16, weight=ft.FontWeight.BOLD),
+                        ft.Text(f"Тип: {self.order_type}", size=14),
+                        ft.Text(f"Цена: ${self.order_price}", size=14),
+                        # ft.ElevatedButton("Подробнее",)
+                    ],
+                    spacing=5,
+                    alignment=ft.MainAxisAlignment.START
+                ),
+                padding=10,
+                bgcolor='#1A1A2E',
+            ),
+            elevation=2,
+            width=300,  # Установите нужную ширину
+            height=120  # Установите нужную высоту
+        )
 
 
 
