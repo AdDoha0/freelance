@@ -4,7 +4,6 @@ import flet as ft
 
 
 
-
 def create_navbar(switch_page) -> ft.Row:
     # Создание навигационного бара внизу экрана
     navbar = ft.Row(
@@ -137,7 +136,9 @@ class OrderCardInProfile:
                         # ft.ElevatedButton("Подробнее",)
                     ],
                     spacing=5,
-                    alignment=ft.MainAxisAlignment.START
+                    alignment=ft.MainAxisAlignment.START,
+
+
                 ),
                 padding=10,
                 bgcolor='#1A1A2E',

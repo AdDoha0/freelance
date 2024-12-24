@@ -1,5 +1,7 @@
 import flet as ft
 
+
+
 from components.important_details import OrderCardInProfile
 
 
@@ -41,7 +43,7 @@ class ProfilePage:
         )
 
         create_order_button = ft.ElevatedButton("добавить", bgcolor='#B2FF66', color=ft.colors.BLACK,
-                            on_click=lambda e: print("Открыть форму создания заказа"))
+                            on_click=lambda e: self.page.on_route_change("create_order"))
 
 
 
@@ -51,15 +53,9 @@ class ProfilePage:
             OrderCardInProfile("Дизайн логотипа", "Графический дизайн", 150).create_order_card(),
             OrderCardInProfile("Дизайн логотипа", "Графический дизайн", 150).create_order_card(),
                 ],
-            scroll=ft.ScrollMode.ADAPTIVE
+            scroll=ft.ScrollMode.ADAPTIVE,
+
             )
-
-
-
-
-
-
-
 
 
         layout = ft.Column(

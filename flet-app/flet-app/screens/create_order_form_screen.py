@@ -1,17 +1,16 @@
 import flet as ft
 
 
-class AuthorizationPage:
+class CreateOrderPage:
 
     def __init__(self, page: ft.Page):
         self.page = page
-        self.page.title = "Авторизация"
+        self.page.title = "Создать заказ"
 
 
     def build(self):
 
         title_auth = ft.Text("Авторизация", size=24, weight=ft.FontWeight.BOLD)
-
 
 
 

@@ -1,5 +1,6 @@
 import flet as ft
-from components.important_details import create_navbar, create_cat_scroll_horizontal, OrderCard
+from components.important_details import create_cat_scroll_horizontal, OrderCard
+
 
 
 class HomePage:
