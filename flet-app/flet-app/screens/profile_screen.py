@@ -40,6 +40,9 @@ class ProfilePage:
             horizontal_alignment=ft.CrossAxisAlignment.START,
         )
 
+        create_order_button = ft.ElevatedButton("добавить", bgcolor='#B2FF66', color=ft.colors.BLACK,
+                            on_click=lambda e: print("Открыть форму создания заказа"))
+
 
 
 
@@ -56,6 +59,9 @@ class ProfilePage:
 
 
 
+
+
+
         layout = ft.Column(
             controls=[
                 ft.Container(
@@ -66,9 +72,13 @@ class ProfilePage:
                     content=general_information,
                     # padding=ft.padding.only(bottom=10)
                 ),
-                 ft.Container(
+                ft.Container(
+                    content=create_order_button,
+                    # padding=ft.padding.only(bottom=10)
+                ),
+                ft.Container(
                     content=order_list,
-                    height=370,  # Установите высоту, чтобы активировать прокрутку
+                    height=320,  # Установите высоту, чтобы активировать прокрутку
                 ),
                 ],
             spacing=10,
