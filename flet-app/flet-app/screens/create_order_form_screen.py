@@ -10,29 +10,46 @@ class CreateOrderPage:
 
     def build(self):
 
-        title_auth = ft.Text("Авторизация", size=24, weight=ft.FontWeight.BOLD)
+        title_auth = ft.Text("Создать заказ", size=24, weight=ft.FontWeight.BOLD)
 
-
-
-        username_input = ft.TextField(
-            label="Имя пользователя",
+        name_oreder_input = ft.TextField(
+            label="Имя заказа",
             bgcolor="#1E1E2F",
             color="#B2FF66",
             border_color="#B2FF66"
             )
-        password_input = ft.TextField(
-            label="Пароль", password=True,
-            bgcolor="#1E1E2F", color="#B2FF66",
-            border_color="#B2FF66"
+        # Многострочное текстовое поле для описания заказа
+        desc_order_input = ft.TextField(
+            label="Описание заказа",
+            bgcolor="#1E1E2F",
+            color="#B2FF66",
+            border_color="#B2FF66",
+            multiline=True,  # Позволяет вводить многострочный текст
+            # width=300,  # Ширина текстового поля
+            height=200,  # Высота текстового поля
+            max_length=500  # Максимальная длина текста
             )
-        email_input = ft.TextField(
-            label="Электронная почта",
+        price_order_input = ft.TextField(
+            label="Цена",
             bgcolor="#1E1E2F",
             color="#B2FF66", border_color="#B2FF66"
             )
+        # Выпадающий список для выбора типа заказа
+        type_order_input = ft.Dropdown(
+            label="Тип заказа",
+            options=[
+                ft.dropdown.Option("Тип 1"),
+                ft.dropdown.Option("Тип 2"),
+                ft.dropdown.Option("Тип 3"),
+            ],
+            bgcolor="#1E1E2F",
+            color="#B2FF66",
+            border_color="#B2FF66",
+            # width=300
+             )
 
-        login_button = ft.ElevatedButton(
-            text="Войти",
+        create_order_button = ft.ElevatedButton(
+            text="Создать",
             bgcolor="#B2FF66",  # Цвет кнопки
             color="#1E1E2F",  # Цвет текста на кнопке
             )
@@ -40,17 +57,15 @@ class CreateOrderPage:
 
         authorization_fields_column = ft.Column(
             controls=[
-                username_input,
-                email_input,
-                password_input,
-                login_button,
+                name_oreder_input,
+                type_order_input,
+                price_order_input,
+                desc_order_input,
+                create_order_button,
             ],
-            alignment=ft.MainAxisAlignment.CENTER,
+            # alignment=ft.MainAxisAlignment.CENTER,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )
-
-
-
 
 
         layout = ft.Column(
