@@ -58,7 +58,7 @@ class CreateServiceSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
-    executor = ExecutorSerializer()
+    customer = CustomerSerializer()
     order_type = serializers.CharField(source="get_order_type_display")
 
     class Meta:
@@ -93,6 +93,8 @@ class CreateTagSerializer(serializers.ModelSerializer):
 
 
 
+
+
 class OrderingSerializer(serializers.ModelSerializer):
     service = ServiceSerializer()
     order = OrderSerializer()
@@ -109,6 +111,8 @@ class CreateOrderingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ordering
         fields = "__all__"
+
+
 
 
 

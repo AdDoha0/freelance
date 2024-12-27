@@ -1,7 +1,7 @@
 import flet as ft
 from flet import TemplateRoute
 
-from components.important_details import create_navbar
+# from components.important_details import create_navbar
 
 from screens.home_screen import HomePage
 from screens.cat_or_search_screen import CatOrSearcPage

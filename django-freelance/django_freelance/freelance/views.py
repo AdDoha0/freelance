@@ -173,7 +173,7 @@ class OrderListView(generics.ListAPIView):
 
 
     def get_queryset(self):
-        queryset = Service.objects.all()
+        queryset = Order.objects.all()
 
         params = self.request.query_params
 
