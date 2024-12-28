@@ -4,14 +4,19 @@ import requests
 
 class CatOrSearcPage:
 
-    def __init__(self, page: ft.Page):
+    def __init__(self, page: ft.Page, cat_id=None):
         self.page = page
-        self.page.title = "Заказы"
+        self.page.title = "Заказы по категориям"
+        self.cat_id = cat_id # если передали категорию тут будет ее id, если нет тут будет None
 
 
     def fetch_orders(self):
-        # URL вашего API для получения заказов
-        api_url = "http://127.0.0.1:8000/api/orders/all/"
+
+        if self.cat_id is None:
+            api_url = "http://127.0.0.1:8000/api/orders/all/" # URL вашего API для получения заказов по категориям
+        else:
+            api_url = f"http://127.0.0.1:8000/api/orders/all/?order_type={self.cat_id}"   # URL вашего API для получения всех заказов
+
 
         try:
             response = requests.get(api_url)

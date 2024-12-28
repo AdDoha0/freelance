@@ -44,9 +44,15 @@ def main(page: ft.Page):
             authorization_page = AuthorizationPage(page)
             page.add(authorization_page.build())
 
-        elif troute.match("/search"):
+
+        elif troute.match("/orders/all"):
             search_page = CatOrSearcPage(page)
             page.add(search_page.build())
+        elif troute.match("/orders/:cat_id"):
+            cat_id = troute.get_param("cat_id")  # Получаем значение cat_id из маршрута
+            cat_page = CatOrSearcPage(page, cat_id)  # Передаем cat_id в конструктор
+            page.add(search_page.build())
+
 
         elif troute.match("/order/create_order"):
             create_order_page = CreateOrderPage(page)
@@ -82,7 +88,7 @@ def main(page: ft.Page):
                     ft.icons.SEARCH_SHARP,
                     tooltip="Избранное",
                     icon_color="#B2FF66",
-                    on_click=lambda e: switch_page("/search")
+                    on_click=lambda e: switch_page("/orders/all")
                 ),
                 ft.IconButton(
                     ft.icons.CONTACT_MAIL,

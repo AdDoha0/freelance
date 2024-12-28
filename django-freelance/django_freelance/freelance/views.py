@@ -177,12 +177,12 @@ class OrderListView(generics.ListAPIView):
 
         params = self.request.query_params
 
-        service_type = params.get('service', None)
+        order_type = params.get('order_type', None)
         price = params.get('price', None)
         customer = params.get('customer', None)
 
-        if service_type:
-            queryset = queryset.filter(service_type=service_type)
+        if order_type:
+            queryset = queryset.filter(order_type=order_type)
 
         if price:
             queryset = queryset.filter(price__lte=price)
