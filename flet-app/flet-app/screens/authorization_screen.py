@@ -3,12 +3,9 @@ import flet as ft
 
 class AuthorizationPage:
 
-    def __init__(self, page: ft.Page):
-        self.page = page
-        self.page.title = "Авторизация"
 
 
-    def build(self):
+    def build(self, switch_page):
 
         title_auth = ft.Text("Авторизация", size=24, weight=ft.FontWeight.BOLD)
 

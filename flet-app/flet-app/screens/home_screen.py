@@ -1,15 +1,12 @@
 import flet as ft
-from components.important_details import create_cat_scroll_horizontal, OrderCard
 
+
+from components.important_details import  OrderCard
+from components.scrol_cat import CatScroll
 
 
 class HomePage:
-
-    def __init__(self, page: ft.Page):
-        self.page = page
-        self.page.title = "Главная страница"
-
-    def build(self):
+    def build(self, switch_page):
 
         # Заголовок "Популярные"
         popular_title = ft.Text("Рекомендации", size=24,
@@ -22,7 +19,7 @@ class HomePage:
         categories_title = ft.Text(
             "Популярные", size=20, weight=ft.FontWeight.BOLD)
 
-        categories = create_cat_scroll_horizontal()
+        categories = CatScroll().build(switch_page)
 
         layout = ft.Column(
             controls=[

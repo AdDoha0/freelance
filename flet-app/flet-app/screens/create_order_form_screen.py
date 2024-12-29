@@ -3,12 +3,7 @@ import flet as ft
 
 class CreateOrderPage:
 
-    def __init__(self, page: ft.Page):
-        self.page = page
-        self.page.title = "Создать заказ"
-
-
-    def build(self):
+    def build(self, switch_page):
 
         title_auth = ft.Text("Создать заказ", size=24, weight=ft.FontWeight.BOLD)
 

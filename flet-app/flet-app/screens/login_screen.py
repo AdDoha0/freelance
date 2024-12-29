@@ -3,16 +3,7 @@ import flet as ft
 
 class LoginPage:
 
-
-    def __init__(self, page: ft.Page):
-        self.page = page
-        self.page.title = "Логин"
-
-
-    def build(self):
-
-
-
+    def build(self, switch_page):
 
         title_login = ft.Text("Войдите  в акаунт", size=24,
                                 weight=ft.FontWeight.BOLD)

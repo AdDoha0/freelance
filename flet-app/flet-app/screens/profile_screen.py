@@ -21,11 +21,8 @@ user_data = {
 
 class ProfilePage:
 
-    def __init__(self, page: ft.Page):
-        self.page = page
-        self.page.title = "Профайл"
 
-    def build(self):
+    def build(self, switch_page):
 
         title_prof = ft.Text("Профиль", size=24, weight=ft.FontWeight.BOLD)
 

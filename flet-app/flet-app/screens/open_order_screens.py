@@ -3,11 +3,9 @@ import flet as ft
 
 class OpenOrderPage:
 
-    def __init__(self, page: ft.Page):
-        self.page = page
 
 
-    def build(self):
+    def build(self, switch_page):
         title = ft.Text("Профиль", size=24, weight=ft.FontWeight.BOLD)
 
 

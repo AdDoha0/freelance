@@ -4,9 +4,7 @@ import requests
 
 class CatOrSearcPage:
 
-    def __init__(self, page: ft.Page, cat_id=None):
-        self.page = page
-        self.page.title = "Заказы по категориям"
+    def __init__(self, cat_id=None):
         self.cat_id = cat_id # если передали категорию тут будет ее id, если нет тут будет None
 
 
@@ -30,8 +28,7 @@ class CatOrSearcPage:
             return []  # Возвращает пустой список в случае исключения
 
 
-
-    def build(self):
+    def build(self, switch_page):
         search_form = create_search_form()
         result_title = ft.Text("Результат", size=17, weight=ft.FontWeight.BOLD)
 
@@ -50,12 +47,6 @@ class CatOrSearcPage:
             ).card
             order_cards.append(order_card)
 
-
-        # recomend_order_card_test1 = OrderCard(
-        #     name="Разработать веб-сайт",
-        #     type="Веб-разработка", price=500,
-        #     description="Создание современного адаптивного сайта для бизнеса"
-        # ).card
 
 
 
