@@ -1,14 +1,6 @@
 import flet as ft
 
-
-
 from route_handler import RouteHandler
-
-
-
-
-
-
 
 def main(page: ft.Page):
     route_handler = RouteHandler(page)  # Создаем экземпляр RouteHandler

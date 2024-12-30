@@ -71,7 +71,7 @@ class LoginPage:
     def handle_login(self, login, password, switch_page):
             if self.auth.login(login, password):
                 print("Успешный вход")
-                switch_page("home")  # Переключение на домашнюю страницу
+                switch_page("/home")  # Переключение на домашнюю страницу
             else:
                 print("Ошибка входа")  # Обработка ошибки
 

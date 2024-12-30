@@ -11,14 +11,15 @@ class Auth:
 
     def login(self, login, password):
         data = {
-                "login": login,
+                "username": login,
                 "password": password
             }
         response = requests.post(f"{API_URL}/token/", json=data)
 
         if response.status_code == 200:
-            print("Успешный вход")
+            print("Успешный вход class Auth")
             self.token = response.json().get("access")  # Сохранение токена
+            print(f"token: {self.token}")
             return True  # Успешный вход
         else:
             # Обработка ошибок
