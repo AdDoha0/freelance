@@ -4,15 +4,6 @@ import flet as ft
 
 from route_handler import RouteHandler
 
-# from components.important_details import create_navbar
-
-# from screens.home_screen import HomePage
-# from screens.cat_or_search_screen import CatOrSearcPage
-# from screens.login_screen import LoginPage
-# from screens.authorization_screen import AuthorizationPage
-# from screens.profile_screen import ProfilePage
-# from screens.create_order_form_screen import CreateOrderPage
-# from screens.open_order_screens import OpenOrderPage
 
 
 

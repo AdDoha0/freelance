@@ -3,8 +3,8 @@ from flet import TemplateRoute
 
 from screens.home_screen import HomePage
 from screens.cat_or_search_screen import CatOrSearcPage
-from screens.login_screen import LoginPage
-from screens.authorization_screen import AuthorizationPage
+from auth.login_screen import LoginPage
+from auth.authorization_screen import AuthorizationPage
 from screens.profile_screen import ProfilePage
 from screens.create_order_form_screen import CreateOrderPage
 from screens.open_order_screens import OpenOrderPage
