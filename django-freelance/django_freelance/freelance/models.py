@@ -50,7 +50,7 @@ class Order(models.Model):
                 ('7', 'Фотография')
             ]
 
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    executor = models.ForeignKey(Executor, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     desc = models.CharField(max_length=1000)
     price = models.IntegerField()

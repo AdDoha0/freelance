@@ -32,12 +32,6 @@ def create_navbar(page: ft.Page) -> ft.Row:
                 icon_color="#B2FF66",
                 on_click=lambda e: route.switch_page("/auth/login")
             ),
-            ft.IconButton(
-                ft.icons.WARNING,
-                tooltip="Тестовый лог",
-                icon_color="#B2FF66",
-                on_click=lambda e: route.switch_page("/auth/authorization")
-            ),
 
         ],
         alignment=ft.MainAxisAlignment.SPACE_AROUND,

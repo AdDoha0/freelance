@@ -40,7 +40,7 @@ class ProfilePage:
         )
 
         create_order_button = ft.ElevatedButton("добавить", bgcolor='#B2FF66', color=ft.colors.BLACK,
-                            on_click=lambda e: self.page.on_route_change("create_order"))
+                            on_click=lambda e: switch_page("/order/create_order"))
 
 
 
