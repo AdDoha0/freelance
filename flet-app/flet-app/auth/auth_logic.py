@@ -9,6 +9,29 @@ class Auth:
         self.token = None  # Переменная для хранения токена
 
 
+    def registration(self, username, password):
+        data = {
+                "username": username,
+                "password":  password
+            }
+        response = requests.post(f"{API_URL}/auth/users/", json=data)
+
+        print(f"Отправленный запрос: {data}")  # Отладка
+        print(f"Статус ответа: {response.status_code}")  # Отладка
+        print(f"Ответ сервера: {response.json()}")  # Отладка
+
+
+        if response.status_code == 201:
+            print("Успешаная регистрация, класс Auth")
+            print(data)
+            return True
+        else:
+            # Обработка ошибок
+            error_message = response.json().get("message", "Неизвестная ошибка")
+            print(f"Ошибка регистрации: {error_message}")  # Вывод ошибки
+            return False
+
+
     def login(self, login, password):
         data = {
                 "username": login,

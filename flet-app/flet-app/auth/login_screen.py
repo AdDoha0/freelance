@@ -35,7 +35,7 @@ class LoginPage:
             text="Войти",
             bgcolor="#B2FF66",  # Цвет кнопки
             color="#1E1E2F",  # Цвет текста на кнопке
-            on_click=lambda e: self.handle_login(login_input.value, password_input.value, switch_page)  # Используем lambda
+            on_click=lambda e: self.handle_login(login_input.value, password_input.value, switch_page)
         )
 
 
